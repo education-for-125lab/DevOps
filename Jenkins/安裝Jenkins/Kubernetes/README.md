@@ -26,7 +26,7 @@ metadata:
 type: Opaque
 data:
   jenkins-admin-user: YWRtaW4=  # "admin" base64 編碼
-  jenkins-admin-password: dmlwMDUyNw==  # "vip0527" base64 編碼
+  jenkins-admin-password: MDAwMDA= # "00000" base64 編碼
 
 ```
 ```
@@ -36,9 +36,9 @@ echo -n "vip0527" | base64
 
 # 結果如下
 qi@QI0527-COM:/mnt/c/Users/ste92$ echo -n "admin" | base64
-echo -n "vip0527" | base64
+echo -n "00000" | base64
 YWRtaW4=
-dmlwMDUyNw==
+MDAwMDA=
 qi@QI0527-COM:/mnt/c/Users/ste92$
 ```
 5. 配置
