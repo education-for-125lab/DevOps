@@ -320,7 +320,7 @@ pipeline {
 
         stage('啟動新容器') {
             steps {
-                sh "docker run -d --name ${CONTAINER_NAME} -p 5500:5500 ${IMAGE_NAME}"
+                sh "docker run -d --restart=always --name ${CONTAINER_NAME} -p 5500:5500 ${IMAGE_NAME}"
             }
         }
 
