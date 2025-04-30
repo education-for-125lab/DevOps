@@ -1,4 +1,7 @@
 # Gitlab 部署 Kubernetes教學
+### 因本人架設時是用兩種電腦安裝所以有兩個網域會有不同的情況(以下安裝只要用你自己的網域就好)
+
+## 安裝教學
 1. 建立命名空間 kubectl create namespace gitlab (建立過就不用)
 先去cloudflare 的ssl 原始伺服器申請憑證,放在cd /mnt/d/DevOps/gitlab 內
 ```
@@ -7,14 +10,6 @@
 ```
 
 2. 在cd /mnt/d/DevOps/gitlab輸入指令創建 Kubernetes Secret
-windows
-```
-kubectl -n gitlab create secret tls gitlab-tls \
---key /mnt/d/DevOps/gitlab/private.key \
---cert /mnt/d/DevOps/gitlab/fullchain.crt
-
-```
-omv-nas-debian
 ```
 kubectl -n gitlab create secret tls gitlab-tls \
 --key /home/primary-drive/DevOps/gtilab/private.key \
@@ -23,7 +18,7 @@ kubectl -n gitlab create secret tls gitlab-tls \
 from-literal=password 輸入你的smtp密碼
 ```
 kubectl create secret generic smtp-secret \
-  --from-literal=password='iiivfvjwtnznntrs' \
+  --from-literal=password='輸入自己的' \
   -n gitlab  
 ```
 3. 驗證
@@ -184,7 +179,7 @@ helm upgrade --install --wait \
   -n cloudflare-tunnel-ingress-controller --create-namespace \
   cloudflare-tunnel-ingress-controller \
   strrl.dev/cloudflare-tunnel-ingress-controller \
-  --set=cloudflare.apiToken="nA0mPp8cA6fGTPMV6Ou_ctoaCixl58PUjwQuK02o",cloudflare.accountId="0fb59caa54a5c2f47df105a282ac9e9e",cloudflare.tunnelName="ingress-tunnel" 
+  --set=cloudflare.apiToken="輸入自己的",cloudflare.accountId="輸入自己的",cloudflare.tunnelName="ingress-tunnel" 
 
 
 ```
@@ -206,8 +201,8 @@ qi@QI0527-COM:/mnt/c/Users/ste92$ helm upgrade --install --wait \
   -n cloudflare-tunnel-ingress-controller --create-namespace \
   cloudflare-tunnel-ingress-controller \
   strrl.dev/cloudflare-tunnel-ingress-controller \
-  --set=cloudflare.apiToken="nA0mPp8cA6fGTPMV6Ou_ctoaCixl58PUjwQuK02o" \
-  --set=cloudflare.accountId="0fb59caa54a5c2f47df105a282ac9e9e" \
+  --set=cloudflare.apiToken="輸入自己的" \
+  --set=cloudflare.accountId="輸入自己的" \
   --set=cloudflare.tunnelName="ingress-tunnel"
 Release "cloudflare-tunnel-ingress-controller" does not exist. Installing it now.
 NAME: cloudflare-tunnel-ingress-controller
