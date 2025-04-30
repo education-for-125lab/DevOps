@@ -2,6 +2,10 @@
 ### 因本人架設時是用兩種電腦安裝所以有兩個網域會有不同的情況(以下安裝只要用你自己的網域就好)
 ### 正式架好並應用的是 (https://gitlab.qi0527.com/)
 
+## 前提
+1. 架設外網是用cloudflare (可以用自己的方式,因cloudflare會限制上傳每人只有100mb)
+2. 需有kubernetes
+
 ## 安裝教學
 1. 建立命名空間 kubectl create namespace gitlab (建立過就不用)
 先去cloudflare 的ssl 原始伺服器申請憑證,放在cd /mnt/d/DevOps/gitlab 內
