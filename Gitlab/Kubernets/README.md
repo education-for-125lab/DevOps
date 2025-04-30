@@ -1,6 +1,6 @@
 # Gitlab 部署 Kubernetes教學
 ### 因本人架設時是用兩種電腦安裝所以有兩個網域會有不同的情況(以下安裝只要用你自己的網域就好)
-### 正式架好並應用的是 (gitlab.qi0527.com)
+### 正式架好並應用的是 (https://gitlab.qi0527.com/)
 
 ## 安裝教學
 1. 建立命名空間 kubectl create namespace gitlab (建立過就不用)
