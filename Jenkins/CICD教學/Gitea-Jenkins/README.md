@@ -137,7 +137,7 @@ python --version
 <img src="images/jenkins-3.png" >
 
 ## Gitea 專案上傳
-1. 可以用我的映射到你的Gitea (https://gitea.qi0527.com/qi_0527/devops-test.git)
+1. 可以用我的test-python.zip
 2. 重點是Jenkinsfile跟Dockerfile
 3. Jenkinsfile(本專案是用python所以有寫自動創建虛擬機venv)
 ```
