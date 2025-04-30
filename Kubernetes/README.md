@@ -343,16 +343,7 @@ kubectl apply -f secret.yaml
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
 
 ```
-電腦永久token
-```
-eyJhbGciOiJSUzI1NiIsImtpZCI6IkRoMXpxOWJHXzFiejhBbjB5VVBUWm9obEhESnBxZ3lxSVdtRFhjbXhzTlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1MDMzODBkOS1iOWIzLTQwZjktYjc5NS00NDYzNDdmNDkwNDkiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.Yj3PoRgykmvSTcXMaJxr5uYYrV2z96TYv5W7gqMlSEKb1pPHvx0W_btxsehV-UOeOnUkLN03VHz4PjpzhGTL_HSuanA3b52EKXHAitpLuI7jGZcxoGFGsf-RmpJyfi7eGxvByKJD0Uv3Tj_1dHCS4tNbvwA3l1LL66utdrDMfBWOzw6y18UWKKcVp0-iEkyR6U3a_5cEpl-06xeQ4G7pbf9tKUd0Hqt-lSSKr3mc-4OXYDAVyOr5zpJazWVJsbU8CE0GIw4RYIv0GjlH4htG7MKhSdANJz00G6RcJO3jbUx2BbmD0QHnmguwzkUExtRo0MicZFmfYEI6fsZYwJpaHw
-```
-NAS永久token
-```
-eyJhbGciOiJSUzI1NiIsImtpZCI6Ijd0OUh6Y1dZdlEyeU1zR28zR1pCNHdscGZVZTEzbmxJTTlzWHMyMXp6STgifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI0MGZkNjA1Zi1mMGU5LTRkY2QtOTk0ZC0zMjYyZmNlNTNkZjQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.iqoL51Gt8r64_NQvJZaQB2j9L6DEahfjQuLpuZvh7NCqWsjnvXHKv--8K7kl4Z-xyUVHDLszC3z5nLiq4_6JBVDSygV2-_bUbHGXr4GROIpQg6EgeFR8Ky6kA2WXtoOTftttGTZgBlUmKVBz3etIPpj9m5Do8PHR6iG-wQ-MneWQiVJ7XO_U1GO1Y5h6u3pb_ZXKvyB-S6a8hWu0Z69B9fijrfy_K4rx6JRao9iVjyfEax6S4RZ4VmNLhfeZoG4JaIQkcuodfOvQ4kmkgMCkPXPfDmq0GjabzSegkl6Byu5GPh2FQrZ3UDCsQXbRt_A2qQRVpDD7f0PeAGEyRw7cTg 
-```
-
-11. 重新開機無法啟動,先將檔案匯出 kubectl get deployment kubernetes-dashboard-kong -n kubernetes-dashboard -o yaml > kubernetes-dashboard-kong-deployment.yaml
+12. 重新開機無法啟動,先將檔案匯出 kubectl get deployment kubernetes-dashboard-kong -n kubernetes-dashboard -o yaml > kubernetes-dashboard-kong-deployment.yaml
 ```
  kubectl get deployment kubernetes-dashboard-kong -n kubernetes-dashboard -o yaml > kubernetes-dashboard-kong-deployment.yaml
 
@@ -714,15 +705,7 @@ kubernetes-dashboard-web-66b75c6c7f-445rv               1/1     Running   4 (41m
 qi@QI0527-COM:/mnt/d/DevOps/kubernetes-dashboard$
 
 ```
-NAS 
-```
-helm upgrade --install --wait \
-  -n cloudflare-tunnel-ingress-controller --create-namespace \
-  cloudflare-tunnel-ingress-controller \
-  strrl.dev/cloudflare-tunnel-ingress-controller \
-  --set=cloudflare.apiToken="368qFQRifHsNa5I21DlnQrCJQrdUaRZoFlrXSdyJ",cloudflare.accountId="0fb59caa54a5c2f47df105a282ac9e9e",cloudflare.tunnelName="NAS-K3s-tunnel" 
 
-```
 
 
 
