@@ -7,12 +7,16 @@ helm repo add strrl.dev https://helm.strrl.dev
 helm repo update
 ```
 2. 
-apiToken : 自行獲取 accountId:登陸網頁選擇你的網域 https://dash.cloudflare.com/0fb59caa54a5c2f47df105a282ac9e9e/home/domains
+apiToken : 自行獲取  
+accountId: 登陸網頁選擇你的網域 https://dash.cloudflare.com/0fb59caa54a5c2f47df105a282ac9e9e/home/domains
+```
+0fb59caa54a5c2f47df105a282ac9e9e 就是你的id
+```
 ```
 helm upgrade --install cloudflare-tunnel-ingress-controller strrl.dev/cloudflare-tunnel-ingress-controller \
   --namespace cloudflare-tunnel-ingress-controller --create-namespace \
-  --set "cloudflare.apiToken=GcqKsV5nL0BW3cB0-BZj7DTXtAwrF1Z4zalJQEb4" \
-  --set "cloudflare.accountId=0fb59caa54a5c2f47df105a282ac9e9e" \
+  --set "cloudflare.apiToken=輸入自己的" \
+  --set "cloudflare.accountId=輸入自己的" \
   --set "cloudflare.tunnelName=ingress-tunnel" \
   --wait
 
