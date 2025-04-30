@@ -307,10 +307,7 @@ k3s.totosss0527.com  > https://10.43.6.181:443
 ```
 kubectl -n kubernetes-dashboard create token admin-user
 ```
-```
-qi@QI0527-COM:/mnt/d/DevOps/kubernetes-dashboard$ kubectl -n kubernetes-dashboard create token admin-user
-eyJhbGciOiJSUzI1NiIsImtpZCI6IjhFQUZlVWw4WUJkX0J2dnNxTkNmaWctbTB4T2FEVWlCYTRtWFBnZjI3QVEifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiLCJrM3MiXSwiZXhwIjoxNzQzMzQzNTk5LCJpYXQiOjE3NDMzMzk5OTksImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwianRpIjoiZTU3MGQxYTItZTUyNi00ZWU4LWIwMTEtZGI2MDg5YzE1MWE0Iiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiYzM4NmI1NzctZTNhMy00MDM2LTgyNDYtMjc2YmUxODRjZmFjIn19LCJuYmYiOjE3NDMzMzk5OTksInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.pHE7S8i7UggRlh3B_XV_ozYVxSXClACUkEe8oWz9mfy40NnFlklOPq4ZatRsbKl6rnIiMGlo-QfAXruDDM5edEUXXEoe1LT-lbzeHsDYooy4pHT8D7qn75hiUv_Koj_TQJf2_Q32ggQG3KQGlzR4bMKFmwYhn_MkRJ8vHmUWlxQC74KSITJ8zbkWefG1-sGJpO46vR6_w4AcoTC6yZMHue1CgdKe4x2xGvwUhJfx7hQhmF3lx40RvJNIqVKvxYjX_GJknEV9B5YqE1LrZb4pWV0J4RxJVSfqKRDlcTMzeVdGlAmE25JzeB-tR8PtkDIjIIRiDfCh0YcM_DJwyHjsIg
-```
+
 8. 設立永久token  secret.yaml
 ```
 apiVersion: v1
@@ -690,7 +687,10 @@ status:
 ```
 kubectl apply -f kubernetes-dashboard-kong-deployment.yaml
 ```
-4.  驗證kubectl get pods -n kubernetes-dashboard
+4.  驗證
+```
+kubectl get pods -n kubernetes-dashboard
+```
 ```
 qi@QI0527-COM:/mnt/d/DevOps/kubernetes-dashboard$ kubectl apply -f kubernetes-dashboard-kong-deployment.yaml
 deployment.apps/kubernetes-dashboard-kong configured
