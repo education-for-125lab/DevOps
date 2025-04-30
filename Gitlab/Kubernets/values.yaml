@@ -42,8 +42,14 @@ global:
     # pullPolicy: IfNotPresent
     # pullSecrets: []
     # tagSuffix: ""
-
   ## Supplemental Pod labels. Will not be used for selectors.
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 250m
+    limits:
+      memory: 2Gi
+      cpu: 1000m
   pod:
     labels: {}
 
@@ -60,19 +66,20 @@ global:
     allowClusterRoles: true
   ## https://docs.gitlab.com/charts/charts/globals#configure-host-settings
   hosts:
-    domain: totosss0527.com
-    hostSuffix:
-    https: true
-    externalIP:
-    ssh: gitlab.ssh.totosss0527.com
-    gitlab:
-      name: gitlab.totosss0527.com
-    minio: {}
-    registry: {}
-    tls: {}
-    smartcard: {}
-    kas: {}
-    pages: {}
+    domain: qi0527.com
+  hostSuffix: ""
+  https: true
+  externalIP: ""
+  ssh: gitlab.ssh.qi0527.com
+  gitlab:
+    name: gitlab.qi0527.com
+  minio: {}
+  registry: {}
+  tls: {}
+  smartcard: {}
+  kas: {}
+  pages: {}
+
 
   ## https://docs.gitlab.com/charts/charts/globals#configure-ingress-settings
   ingress:
@@ -171,7 +178,7 @@ global:
     # 修改點
     persistence:
       enabled: true  # 啟用持久化存儲
-      size: 10Gi      # NAS 設置為 30Gi，電腦10Gi,根據你的需求調整大小
+      size: 30Gi      # NAS 設置為 30Gi，電腦10Gi,根據你的需求調整大小
       storageClass: "local-path"  # 根據你的存儲類別選擇
       accessMode: ReadWriteOnce  # 設定訪問模式，通常使用 ReadWriteOnce
       # secret:
@@ -201,7 +208,7 @@ global:
     # 修改點
     persistence:
       enabled: true  # 啟用持久化存儲
-      size: 50Gi      # NAS設置為 500Gi，電腦50Gi,根據你的需求調整大小
+      size: 500Gi      # NAS設置為 500Gi，電腦50Gi,根據你的需求調整大小
       storageClass: "local-path"  # 根據你的存儲類別選擇
       accessMode: ReadWriteOnce  # 設定訪問模式，通常使用 ReadWriteOnce
     internal:
@@ -253,7 +260,7 @@ global:
     # 修改點
     persistence:
       enabled: true
-      size: 30Gi  # NAS設置為 250Gi，電腦30Gi,根據你的需求進行調整
+      size: 250Gi  # NAS設置為 250Gi，電腦30Gi,根據你的需求進行調整
       storageClass: "local-path"  # 根據你的環境選擇存儲類別
       accessMode: ReadWriteOnce
 
@@ -792,7 +799,7 @@ global:
       certName: "tls.crt"
 
   ## Timezone for containers.
-  time_zone: UTC
+  time_zone: Asia/Taipei
 
   ## Global Service Annotations and Labels
   service:
@@ -1121,7 +1128,7 @@ prometheus:
     # 修改點
     persistence:
       enabled: true
-      size: 10Gi  # NAS設置為 100Gi，電腦10Gi,根據你的需求進行調整
+      size: 100Gi  # NAS設置為 100Gi，電腦10Gi,根據你的需求進行調整
       storageClass: "local-path"  # 根據實際情況選擇你的存儲類別
       accessMode: ReadWriteOnce
   podSecurityPolicy:
@@ -1306,7 +1313,7 @@ postgresql:
     # 修改點
     persistence:
       enabled: true
-      size: 30Gi  # NAS設定為 100Gi,電腦30Gi,根據你的存儲類別來設置
+      size: 100Gi  # NAS設定為 100Gi,電腦30Gi,根據你的存儲類別來設置
       storageClass: "local-path"  # 根據你的存儲類別來設置
       accessMode: ReadWriteOnce
 
