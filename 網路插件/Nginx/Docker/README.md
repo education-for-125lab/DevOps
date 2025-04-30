@@ -146,7 +146,7 @@ http {
 ```
 5. 初始帳號:admin@example.com
 6. 先用好CloudFlare與 Duckdns DNS 
-7. 申請SSL 需要 CloudFlare API 我的API=yPUTk68SoYHRN_cS8ETb_tPNQhbGT4jOOhvfbJjv
+7. 申請SSL 需要 CloudFlare API 
 8. 之後修正conf 去docker 內更改
 ```
 docker exec -it nginx-app-1 /bin/sh
